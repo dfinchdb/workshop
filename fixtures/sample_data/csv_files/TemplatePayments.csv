@@ -1,0 +1,4 @@
+template_payment_id,template_id,recipient_id,account_id,amount,currency_name,split_amount1,split_account_id1,split_amount2,split_account_id2,addenda,template_recipient_id
+29756,13079,9573,9434,240.0,U.S. Dollar,,,,,,29756
+29757,13079,9563,9424,266.16,U.S. Dollar,,,,,,29757
+29758,13079,9663,9524,711.77,U.S. Dollar,,,,,,29758

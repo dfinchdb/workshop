@@ -1,0 +1,4 @@
+alert_id,user_id,alert_date,target_address,notification_delivery_method,notification_type,status
+23470,107762,2020-04-29 04:05:33.740,16512709615,SMS,HadeCurrencyAlert,Delivered
+23475,13868,2020-04-29 04:05:33.740,cisnorth@yahoo.com,Email,HadeCurrencyAlert,Delivered
+23486,12174,2020-04-29 04:15:14.523,kellywadeharris@sbcglobal.net,Email,PostedTransactionAlert,Delivered

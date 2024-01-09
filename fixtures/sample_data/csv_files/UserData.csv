@@ -1,0 +1,4 @@
+user_id,customer_id,user_role_id,group_id,active_inactive,created_date,deleted_date,group_name,group_deleted_dates,zone_id,zone_description,auto_generated
+1,1,,1,Active,"2015-11-16 11:00:05.000",,Test_ Group,,1,Academy Credit Union,1
+2,1,,1,Disabled,"2015-11-16 11:00:23.120","2016-10-03 15:09:25.480",Test_ Group,,2,Highland Credit,1
+3,1,,1,Inactive,"2015-11-16 11:00:54.777",,Test_ Group,,1,Academy Credit Union,1

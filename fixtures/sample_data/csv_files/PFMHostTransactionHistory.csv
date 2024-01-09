@@ -1,0 +1,5 @@
+pfm_transaction_id,pfm_account_id,post_date,host_tran_number,txn_amount,pfm_trancode,txn_desc,d_or_c,pfm_product_id,product_name,institution_id,institution_name,user_id
+32523,99,2018-02-05 12:00:00,TRN-8d056a61-4293-c01b-98c8-60157335cbcb,7.99,DEBIT,NETFLIX.COM,D,1,Checking,35,Wells Fargo,4256
+32522,99,2018-02-05 12:00:00,TRN-484780dc-17e5-7e22-7bb1-1931b75da9ff,10.0,CREDIT,MOBILE DEPOSIT : REF NUMBER,C,1,Checking,35,Wells Fargo,4256
+32477,314,2018-02-05 12:00:00,TRN-b2b276bb-3c21-1914-a99e-1a52b2e35393,76.78,CREDIT,WWW.GETZS.COM 906-2263561 MI,C,16,Credit Card,18,Bank of America,2734
+32478,314,2018-02-05 12:00:00,TRN-0333bb9c-f9f6-58d0-a925-45b05c2cedfd,32.46,DEBIT,SHELL OIL XXXXXXX0015 BENZONIA M,D,19,Credit Card,18,Bank of America,2734

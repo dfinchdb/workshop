@@ -1,0 +1,5 @@
+transaction_id,user_id,transaction_amount,gt_type,create_date,gt_description,authorized_user_id,authorized_date,originating_account_id,subsidiary_id,is_external,process_date,recurring_master,parent_id,is_child,ui_source_id,channel_description,template_id,gt_status,host_result
+59040,8371,157,FundsTransfer,"2021-06-01 8:00:00.000",Funds Transfer via Mobile,83715.0,"2021-06-01 8:00:00.000",8884,,0,"2021-06-01 12:00:00.000",1,,0,1,OnlineBanking,,Authorized,Csr action required.
+58904,7766,100,FundsTransfer,"2021-06-01 2:46:00.050",,77660.0,"2021-06-01 2:46:00.050",36982,,0,"2021-07-01 12:00:00.050",0,,0,8,API,,Cancelled,HostFailed
+59034,10227,41,FundsTransfer,"2021-06-01 7:52:00.000",Funds Transfer via Mobile,102275.0,"2021-06-01 7:52:00.000",76203,,0,"2021-06-01 12:00:00.050",0,,0,1,OnlineBanking,,HostFailed,Waiting on connectionstring.
+59259,7799,500,FundsTransfer,"2021-06-01 9:58:00.050",Funds Transfer via Online,,,14046,,0,"2021-06-01 12:00:00.500",0,,0,1,OnlineBanking,,Drafted,No matching adapter for specified UISource.

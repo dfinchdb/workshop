@@ -1,0 +1,5 @@
+recurring_transaction_id,transaction_type,every_x_weeks_or_months,frequency_bit_flag,start_date,end_date,end_date.1,executed_occurrences,last_occurrence,replaces_recurring_transaction_id,replaced_by_recurring_transaction_id,recurrence_english_translation
+24102,0,2,2,"5/27/22 12:00 AM","1/1/22 12:00 AM","1/2/22 12:00 AM",0,,,,Every 2nd week on Monday
+24103,1,1,256,"6/9/22 12:00 AM","1/1/22 12:00 AM","1/2/22 12:00 AM",1,"6/9/22 12:00 AM",,,Every month on the 9th of the month
+24104,1,3,32768,"5/16/22 12:00 AM","1/1/22 12:00 AM","1/2/22 12:00 AM",1,"5/16/22 12:00 AM",,,Every 3rd month on the 16th of the month
+24105,0,1,1,"5/16/22 12:00 AM","1/1/22 12:00 AM","1/2/22 12:00 AM",1,"5/22/22 12:00 AM",,,Every week on Sunday

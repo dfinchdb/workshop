@@ -1,0 +1,4 @@
+aggregate_ach_credit_limit_per_month,aggregate_ach_debit_limit_per_day,aggregate_ach_debit_limit_per_month,gt_type,as_of_date
+0,0,0,Wire transfer,2018-03-05 14:38:07.143
+0,0,0,External transfer,2018-03-05 14:38:07.143
+1000000,1000000,1000000,ACH single receipt,2018-03-05 14:38:07.143

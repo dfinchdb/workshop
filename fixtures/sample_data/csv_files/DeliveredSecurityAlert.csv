@@ -1,0 +1,4 @@
+security_alert_id,user_id,security_alert_date,security_alert_description,session_id,notification_delivery_method,email,phone,sms,secure_message,push
+198772,11546,"2020-04-29 06:30:58.230",InvalidPassword,tyzgbdxwqfmwm0hlvbzuuw41,Email,1,0,0,1,0
+198774,14879,"2020-04-29 07:03:38.760",ValidSecureAccessCode,glfezp4jxjb04rjkeav4mzlm,Email,1,0,0,0,1
+198855,16450,"2020-04-29 15:18:06.603",UserProfileUpdated,gzgxrvnphh5uqf4e3etpvcwa,Email,1,0,0,0,0

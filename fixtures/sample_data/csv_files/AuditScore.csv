@@ -1,0 +1,4 @@
+session_id,user_id,login_name,score,country_name,state,audit_id,transaction_id,score_description
+3ane5vs2awy1fexisnjrgzx4,86108,q2alerts,1,,,3916238130,,LogonUser
+4m5g3ttwtk4abcgtuo5qnavq,3961099,135079,1,United States,TX,3916299851,,ValidateLogonTemporaryAccessCode
+bc15yqcqyecpi0azjpst5p1w,368068,101440311,0,United States,AK,3916350115,7041558.0,AuthorizeAchPayment

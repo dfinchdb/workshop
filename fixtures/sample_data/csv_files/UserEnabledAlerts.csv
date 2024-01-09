@@ -1,0 +1,4 @@
+alert_definition_id,host_account_id,alert_type,notification_type,operand,comparison_value,one_time_alert,user_id,sub_type_description,send_secure_message,last_alerted,email,phone_number
+891,47300,Online activity alerts,Email,GT,,0,17669,Funds Transfer,,,johnsmith@email.com,
+1244,21877,Account amount- driven alerts,Sms,LT,2000.0,1,13730,Available Balance,1.0,"2019-10-03 13:41:03.650",,"5558333507"
+1598,10487,"NSFtransaction alerts",Sms,EQ,0.0,0,4435,,1.0,,,"5553778867"

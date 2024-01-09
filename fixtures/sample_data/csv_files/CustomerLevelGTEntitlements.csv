@@ -1,0 +1,5 @@
+group_id,customer_id,enabled,property_id,property_name
+9,1,1,21,GeneratedTransaction/AchCollection
+9,1,1,22,GeneratedTransaction/AchCollection/Authorize
+14,4380,0,83,GeneratedTransaction/EFTPS
+14,4380,0,84,GeneratedTransaction/EFTPS/Authorize

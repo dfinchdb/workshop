@@ -1,0 +1,5 @@
+user_id,customer_id,user_role_id,role_description,full_description,role_deleted_date,enabled,manage_user_roles
+15235,6404,49,Treasury Clerk,,,1,1
+24909,17376,150,Company Admin,"Admin has access to all features, accounts, and enabled trx types with full amount (per Bank policy) for draft, approve, cancel trx rights.The Admin Role also has the maximum Role Approval Limits per Company Policy and the ability to View all User Roles trx activity",,1,1
+75369,37467,31043,View Only,"Has no access to features, access to all accounts, and access to view all GT trx types.",,1,0
+75313,50632,31028,Admin,,,1,1

@@ -1,0 +1,4 @@
+template_id,type_description,name,description,customer_id,create_date,create_by_user_id,last_edit_date,last_edited_by_user_id,is_single_payment,ach_class_code,user_id
+518,Payroll,Weekly Payroll,Weekly Payroll,543350,2018-11-19 09:28:55.430,543352,2018-11-19 09:28:55.430,543350.0,1,PPD,545727
+75011,ACH Payments,Tire Technologies,,399668,2018-11-26 10:22:04.003,399668,2018-11-26 10:23:19.740,399668.0,1,,378209
+75006,Wire Transfer,Transone Logics,,301901,2018-11-21 14:08:03.983,301909,,,1,PPD,281539

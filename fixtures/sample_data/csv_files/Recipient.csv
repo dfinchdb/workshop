@@ -1,0 +1,4 @@
+recipient_id,display_name,wire_name,customer_id,email_address,is_international,ach_class_code,ach_name,identification_number,address_1,address_2,address_3,city,state,postal_code,iso_code_a3
+15673,"SW Properties, Inc DBA Del Mar Esc",Del Mar Escrow,557,,0,PPD,,,8577 Haven Ave. Suite 310,,,Rancho Cucamonga,CA,91730.0,USA
+15667,Carter Fred,,571,,0,PPD,,,,,,,,,
+15668,Abe Ramirez,,473,edna21@email.com,0,PPD,Abe Ramirez,,,,,,,,

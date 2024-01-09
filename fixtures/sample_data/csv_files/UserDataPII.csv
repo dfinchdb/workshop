@@ -1,0 +1,4 @@
+user_id,primary_cif,last_name,first_name,middle_name,salutation,suffix,social_security_number,email_address,street_address_1,street_address_2,city,state,postal_code,province,is_international,iso_code_a3
+1,340781,Smith,John,Michael,Mr.,,111111111,john.smith@email.com,123 Elm Street,,Houston,TX,77020,,0,USA
+2,130207,Smith,Jane,Ann,Mrs.,,111111112,jane.smith@email.com,P.O. Box 259,341 Olive Drive,Houston,TX,77020,,0,USA
+3,140352,Jones,John,Jay,Mr.,Jr.,0,john.jones@email.com,450 Hwy 3,,Rock Creek,,V0H1y0,BC,1,CA

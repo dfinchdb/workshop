@@ -1,0 +1,5 @@
+user_id,host_account_id,product_name,product_id,access,account_number_internal,account_number_external,CIFInternal,CIFExternal,is_external_account,external_aba,skip_balance_check,account_status
+100,18205,Assoc Money Market,128,2,918000004372,918000004372,BAD1745,650125,0,123456789,0,Dormant
+101,13982,Basic Business,99,2,711700000676,711700000676,BAD1883,824040,0,123456789,0,Closed
+102,36630,1 YR IRA,243,2,609900401374,609900401374,SAA0783,220318,0,63116025,0,Dormant
+103,34556,Fully Analyzed Comm,122,2,703100000165,703100000165,CAA0266,204458669,0,63116025,0,Closed

@@ -1,0 +1,4 @@
+user_logon_id,user_id,is_bill_payment,is_transfer,transaction_amount,transaction_date,transaction_id
+8295,1,0,1,157,2021-06-01 12:00:00.003,100
+300004,2,1,0,100,2021-07-01 12:00:00.003,103
+300028,3,0,1,41,2021-06-01 12:00:00.525,107

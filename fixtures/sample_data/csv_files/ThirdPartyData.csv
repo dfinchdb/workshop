@@ -1,0 +1,5 @@
+data_id,user_id,vendor_name,data_type,data_value
+1,7737,BillPayment.IPayJXchangeVariables,Session.UserName,19682411
+4,7737,BillPayment.IPayJXchangeVariables,Session.Message,"<bpAccounts UserUnenrolled=""false""><UserData Value=""19682411""/><AccountData BpID=""4804295"" Value=""1036820"" AcctId=""1036820"" HostAcctId=""36538"" /></bpAccounts>"
+14,3461,Q2Wedge.RDCEnrollmentRequestForm,RequestedWhen,2017-05-25 13:50:52.973000
+15,3461,Q2Wedge.RDCEnrollmentRequestForm,RequestedByLoginID,12345

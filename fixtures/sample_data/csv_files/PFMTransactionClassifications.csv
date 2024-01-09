@@ -1,0 +1,5 @@
+categorization_id,pfm_account_id,post_date,host_tran_number,cleaned_description,classification_desc
+367,32444,2018-01-09 07:00:00,TRN-986bcce6-3265-3cbe-6b34-3f59952db766,Loan Payment Central State Bktype,Auto & Transport
+411,32277,2018-01-17 23:59:59,TRN-986bcce6-3265-3cbe-6b34-3f59952db766,Auto-Owners (Insurance),Auto Insurance
+368,32303,2018-02-05 07:00:00,TRN-986bcce6-3265-3cbe-6b34-3f59952db766,GM Financial Lease,Auto Payment
+369,32310,2018-01-31 07:00:00,TRN-ba5c18ee-d2d8-ce99-196a-9ab13be49fa5,ExxonMobil,Gas

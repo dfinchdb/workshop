@@ -1,0 +1,5 @@
+group_id,customer_id,user_id,enabled,property_id,property_name
+10,10,10,0,55,GeneratedTransaction/AchBatch
+10,10,10,0,56,GeneratedTransaction/AchBatch/Authorize
+11,11,174,1,55,GeneratedTransaction/AchBatch
+11,11,174,1,56,GeneratedTransaction/AchBatch/Authorize

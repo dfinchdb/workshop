@@ -1,0 +1,4 @@
+user_id,host_account_id,product_name,product_id,estatement_registration_date,access,account_number_internal,account_number_external,cif_internal,cif_external,is_external_account,external_account_aba,skip_balance_check
+16108,5165,Free Checking,3,2015-11-17 12:00:06.077,7.0,825108679841,4147769613,137142,61708830,0,,0
+28527,5465,Business Checking,7,2015-11-17 12:00:06.077,,825109268051,4037699128,199688,44541297,0,,0
+20649,8365,Business Money Market Account,14,,1.0,565528758128,4037668054,195130,64772714,0,,1

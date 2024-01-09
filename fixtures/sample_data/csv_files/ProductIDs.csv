@@ -1,0 +1,4 @@
+product_id,product_name,host_product_code,product_type_id,product_type_name,host_product_type_code
+1,Money Market,SDMM,36,Money Market,checking
+2,Share Draft,SDPH,8,Checking,checking
+3,Forward Checking,ECHK,10,Checking,checking

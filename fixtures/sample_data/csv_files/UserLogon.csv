@@ -1,0 +1,3 @@
+user_logon_id,user_id,login_name,last_change,last_logon,last_failed,create_date,password_status,status_reason,logon_deleted_date
+8295,7939,bobsmith,2018-03-29 08:26:35.377,2018-03-29 12:51:17.517,2018-03-29 12:56:32.423,2018-03-06 08:42:01.900,Temporary Access Code Required,TemporaryAccessCode requested,
+300004,309235,jasonwhite,2018-08-14 15:23:55.550,,,2018-06-14 13:23:41.000,Password Change Required,Csr Initiated Change,2021-07-20 00:00:03.193

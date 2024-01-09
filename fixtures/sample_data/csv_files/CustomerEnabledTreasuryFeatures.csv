@@ -1,0 +1,5 @@
+propert_long_name,property_name,customer_id,group_id
+Information Reporting Feature Access Company Entitlements Report,InformationReportingFeatureAccess/CompanyEntitlementsReport,65418,92
+Multi Transfer Enabled,Customer/MultiTransfer/Allow/Enabled,68919,92
+Show Class Code Policy Element,Customer/ShowSecCodePolicyElement,57280,66
+Mobile: Enable Mobile Deposit Capture,FeatureUser/EnableMobileCapture,65731,66

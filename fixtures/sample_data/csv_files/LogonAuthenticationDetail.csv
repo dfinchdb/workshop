@@ -1,0 +1,4 @@
+audit_id,audit_action_description,user_id,session_date,session_id,error_return_code,error_description,multi_factor_authentication_success,logon_token_mfa,logon_token_enabled,password_was_expired,password_was_new,forgot_password_success,csr_assist_session,counts_as_a_login,ui_source_id,channel_description
+522851067,LogonUser,35141.0,"2019-06-02 00:00:42.763",3ane5vs2awy1fexisnjrgzx4,-86,UserLogonTacRequired,1,0,0,0,0,0,0,1,1,OnlineBanking
+522851187,LogonUser,,"2019-06-02 00:01:59.713",4m5g3ttwtk4abcgtuo5qnavq,-193,PasswordUserAndPasswordDoNotMatch,0,0,0,0,0,0,0,0,2,VoiceBanking
+522860563,LogonUser,379740.0,"2019-06-02 02:20:58.863",bc15yqcqyecpi0azjpst5p1w,0,Success,1,0,0,0,0,0,0,1,1,OnlineBanking

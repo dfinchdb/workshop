@@ -1,0 +1,4 @@
+user_id,session_date,session_id,useragent_header,sessionanalysis_category,entry_method,userlogon_id,operating_system,browser_version,is_mobile_application,mobile_application_ver,counts_as_a_login
+44444,"2017-07-20 00:00:02.34",aw4zebwrdeawvbh3chaf1c2l,Q2Monitor,Phone,Unknown,44456,Unknown,Unknown,0,Unknown,1
+10142,"2017-07-20 00:00:03.193",oecbja03zs4hfk4f1cj5p1zq,ngam-ios/1013 CFNetwork/811.5.4 Darwin/16.6.0,Tablet,CFNetwork,11148,Darwin,811.5.4,1,Unknown,0
+38024,"2017-07-20 00:00:03.577",inkxt2qohtdgc0oiwxjooquz,"Mozilla/5.0 (Linux; Android 4.2.1; en-us; Nexus 4 Build/JOP40D) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.166 Mobile Safari/535.19",Phone,Chrome,38000,Android,18.0.1025.166,1,Unknown,1

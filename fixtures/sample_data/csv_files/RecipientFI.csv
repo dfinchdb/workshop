@@ -1,0 +1,4 @@
+recipient_fidetail_id,account_id,name,bic,branch_bic,address_1,address_2,address_3,city,state,postal_code,iso_code_a3,intermediary_aba,is_intermed_fi,i_ban,receiving_fi_short_name,receiving_fi_aba
+100,1498,Totally Real Credit Union,111111111,,P.O. Box 123,,,Austin,TX,78757,USA,,0,,,
+276,4307,ASB Bank,122000000,,P.O. Box 123,Queenstown Central Otago 9300,09300 Queenstown,Queenstown,,9300,USA,,0,,,
+280,2507,The Cole Law Firm,123123123,,"800 Washington Ave North, Ste 620",,,Minneapolis,MN,55401,USA,91001324.0,1,,,

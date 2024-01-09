@@ -1,0 +1,4 @@
+phone_id,user_id,customer_id,area_code,phone_number,extension,phone_type
+12116,1.0,1324.0,512,5551234,7.0,Business
+12117,,4264.0,509,9895632,,Home
+12120,5060.0,,509,9784621,,Mobile

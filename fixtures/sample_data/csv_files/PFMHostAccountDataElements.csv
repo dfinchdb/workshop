@@ -1,0 +1,6 @@
+user_id,hade_name,pfm_account_id,data_value,pfm_product_id,product_name,as_of_date,institution_id,institution_name,last_status_change,account_status
+2558,CurrBal,16,158.58,30,Credit Card,2018-03-26 03:30:28,11.0,Capitol One Credit Card,2017-02-17 14:51:36,"Account is Visible, Normal State"
+2558,APR,16,0.18,30,Credit Card,2018-03-26 03:30:28,11.0,Capitol One Credit Card,2017-02-17 14:51:36,"Account is Visible, Normal State"
+2558,Minimum_payment,16,30,30,Credit Card,2018-03-26 03:30:28,11.0,Capitol One Credit Card,2017-02-17 14:51:36,"Account is Visible, Normal State"
+2558,Payment_due_date,49,2018-04-13T01:00:00-06:00,31,LOAN,2018-03-26 03:30:28,1.0,Harris Bank-Personal,2017-02-17 14:51:36,"Account is Visible, Normal State"
+2558,CurrBal,42,79786.03,10,Brokerage Account,,,Newport Group,2017-03-15 14:25:56,"Account is Visible, Normal State"
