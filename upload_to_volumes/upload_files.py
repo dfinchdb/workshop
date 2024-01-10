@@ -57,7 +57,8 @@ def upload_dir() -> None:
             db_source = pathlib.Path(__file__).parents[2]
             source_dir = f'file:{str(db_source)}{path["source"]}'
             dest_dir = path["destination"]
-            dbutils.fs.cp(source_dir, dest_dir, recurse=True)
+            print(source_dir, dest_dir)
+            # dbutils.fs.cp(source_dir, dest_dir, recurse=True)
 
 
 if __name__ == "__main__":
