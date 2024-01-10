@@ -54,11 +54,10 @@ def upload_dir() -> None:
             cleanup_files(dbutils, path["destination"])
     else:
         for path in paths:
-            db_source = "../"
-            source_dir = f'file:{str(db_source)}{path["source"]}'
+            db_source = os.path.join(os.getcwd(), os.path.abspath(".."))
+            source_dir = str(f'file:{db_source}{path["source"]}')
             dest_dir = path["destination"]
-            print(source_dir, dest_dir)
-            # dbutils.fs.cp(source_dir, dest_dir, recurse=True)
+            dbutils.fs.cp(source_dir, dest_dir, recurse=True)
 
 
 if __name__ == "__main__":
