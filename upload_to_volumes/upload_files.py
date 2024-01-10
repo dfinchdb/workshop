@@ -38,7 +38,7 @@ def upload_dir() -> None:
     When using the Databricks extension for vsCode, files are synchronized to the user's Workspace & can then be copied to Volumes.
     """
     # Read "upload_files_config.ini" & parse configs
-    upload_files_config_path = pathlib.Path(__file__).parent / "upload_files_config.ini"
+    upload_files_config_path = "./upload_files_config.ini"
     upload_files_config = configparser.ConfigParser()
     upload_files_config.read(upload_files_config_path)
     file_cleanup = ast.literal_eval(upload_files_config["options"]["file_cleanup"])
