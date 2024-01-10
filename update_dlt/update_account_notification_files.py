@@ -5,7 +5,14 @@
 
 # COMMAND ----------
 
-df = spark.read.format('csv').option("header","true").option("delimiter","||").load("/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/updates/pipeline_update.csv")
+df = (
+    spark.read.format("csv")
+    .option("header", "true")
+    .option("delimiter", "||")
+    .load(
+        "/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/updates/pipeline_update.csv"
+    )
+)
 df.display()
 
 # COMMAND ----------
@@ -27,41 +34,3 @@ df.write.csv(
     header=True,
     mode="append",
 )
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-
-
-# COMMAND ----------
-
-delete = "/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/pipe_delim_files/account_notification"
-dbutils.fs.rm(delete,recurse=True)
-
-# COMMAND ----------
-
-source = "/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/csv_files/Account Notification.csv"
-df = spark.read.format('csv').option("header","true").option("delimiter",",").load(source)
-df.display()
-
-# COMMAND ----------
-
-destination = "/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/pipe_delim_files/account_notification"
-
-df.write.csv(
-        path=destination,
-        sep="||",
-        header=True,
-        mode="overwrite",
-    )
-
-# COMMAND ----------
-
-table = "umpqua_poc_dev.bronze_data.test_account_notification"
-df.write.format("delta").mode("overwrite").saveAsTable(table)
-
-# COMMAND ----------
-
