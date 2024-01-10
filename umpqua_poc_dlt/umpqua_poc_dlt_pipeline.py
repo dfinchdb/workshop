@@ -56,6 +56,14 @@ config = [
 
 # COMMAND ----------
 
+dlt_config_path = "./umpqua_poc_dlt/umpqua_dlt_config.ini"
+dlt_config = configparser.ConfigParser()
+dlt_config.read(dlt_config_path)
+
+config = ast.literal_eval(dlt_config["dlt_config"]["config"])
+
+# COMMAND ----------
+
 
 def generate_table(live_table):
     @dlt.table(
