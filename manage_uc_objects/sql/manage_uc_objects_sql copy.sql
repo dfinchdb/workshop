@@ -98,7 +98,7 @@ GRANT ALL PRIVILEGES ON STORAGE CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903
 
 
 -- Create external location to be used for the Unity Catalog Volume in the Bronze Schema of the PRD Catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_bronze_volume_ext_loc` URL 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/volumes/bronze'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_bronze_volume_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/volumes/bronze'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_prd.bronze_data.bronze_volume';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
@@ -106,7 +106,7 @@ GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED ST
 
 
 -- Create external location to be used for the Unity Catalog Volume in the Silver Schema of the PRD Catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_silver_volume_ext_loc` URL 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/volumes/silver'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_silver_volume_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/volumes/silver'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_prd.silver_data.silver_volume';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
@@ -114,7 +114,7 @@ GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED ST
 
 
 -- Create external location to be used for the Unity Catalog Volume in the Gold Schema of the PRD Catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_gold_volume_ext_loc` URL 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/volumes/gold'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_gold_volume_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/volumes/gold'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_prd.gold_data.gold_volume';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
@@ -122,7 +122,7 @@ GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED ST
 
 
 -- Create external location to be used for the Bronze Schema of the PRD Catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_bronze_schema_ext_loc` URL 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/tables/bronze'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_bronze_schema_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/bronze'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_prd.bronze_data';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
@@ -130,7 +130,7 @@ GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED ST
 
 
 -- Create external location to be used for the Silver Schema of the PRD Catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_silver_schema_ext_loc` URL 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/tables/silver'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_silver_schema_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/silver'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_prd.silver_data';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
@@ -138,7 +138,7 @@ GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED ST
 
 
 -- Create external location to be used for the Gold Schema of the PRD Catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_gold_schema_ext_loc` URL 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/tables/gold'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_gold_schema_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/gold'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_prd.gold_data';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
@@ -212,15 +212,15 @@ CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.gold_data
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.bronze_data
-  MANAGED LOCATION 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/tables/bronze';
+  MANAGED LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/bronze';
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.silver_data
-  MANAGED LOCATION 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/tables/silver';
+  MANAGED LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/silver';
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.gold_data
-  MANAGED LOCATION 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/tables/gold';
+  MANAGED LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/gold';
 
 
 -- COMMAND ----------
@@ -254,15 +254,15 @@ CREATE EXTERNAL VOLUME IF NOT EXISTS umpqua_poc_dev.gold_data.gold_volume
 -- Create the PRD Volumes
 
 CREATE EXTERNAL VOLUME IF NOT EXISTS umpqua_poc_prd.bronze_data.bronze_volume
-  LOCATION 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/volumes/bronze'
+  LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/volumes/bronze'
   COMMENT 'External volume for the PRD Umpqua POC bronze layer';
 
 CREATE EXTERNAL VOLUME IF NOT EXISTS umpqua_poc_prd.silver_data.silver_volume
-  LOCATION 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/volumes/silver'
+  LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/volumes/silver'
   COMMENT 'External volume for the PRD Umpqua POC silver layer';
 
 CREATE EXTERNAL VOLUME IF NOT EXISTS umpqua_poc_prd.gold_data.gold_volume
-  LOCATION 'abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/volumes/gold'
+  LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/volumes/gold'
   COMMENT 'External volume for the PRD Umpqua POC gold layer';
 
 -- COMMAND ----------
