@@ -54,7 +54,7 @@ def upload_dir() -> None:
             cleanup_files(dbutils, path["destination"])
     else:
         for path in paths:
-            db_source = pathlib.Path(__file__).parents[2]
+            db_source = "../"
             source_dir = f'file:{str(db_source)}{path["source"]}'
             dest_dir = path["destination"]
             print(source_dir, dest_dir)
