@@ -1,4 +1,3 @@
-# Databricks notebook source
 """
 Docs:
 AutoLoader Options - https://docs.databricks.com/en/ingestion/auto-loader/options.html
@@ -60,5 +59,3 @@ def dlt_table(
 
 if __name__ == "__main__":
     pass
-
-# COMMAND ----------
