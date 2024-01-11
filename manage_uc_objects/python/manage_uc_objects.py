@@ -1,8 +1,3 @@
-# Databricks notebook source
-"""
-Requires running locally or on a build agent with authentication environment variables set or other authentication method. Does not work from a Databricks cluster.
-"""
-
 import ast
 import configparser
 import pathlib
@@ -500,7 +495,7 @@ def create_uc_objects() -> None:
         If uc_cleanup is set to True in the config, then the objects will be removed
     """
     # Read "manage_uc_objects_config.ini" & parse configs
-    uc_obj_config_path = "./manage_uc_objects_config.ini"
+    uc_obj_config_path = pathlib.Path(__file__).parent / "manage_uc_objects_config.ini"
     uc_obj_config = configparser.ConfigParser()
     uc_obj_config.read(uc_obj_config_path)
 
@@ -565,7 +560,3 @@ def create_uc_objects() -> None:
 
 if __name__ == "__main__":
     create_uc_objects()
-
-
-# COMMAND ----------
-
