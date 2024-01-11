@@ -99,7 +99,7 @@ def csv_to_pipe() -> None:
     IF "data_cleanup" is set to TRUE in the config, then the files and tables will be removed
     """
     # Read "data_processing_config.ini" & parse configs
-    data_processing_config_path = "./convert_csv_to_pipe_config.ini"
+    data_processing_config_path = "./umpqua_convert_csv_to_pipe_config.ini"
     data_processing_config = configparser.ConfigParser()
     data_processing_config.read(data_processing_config_path)
 
