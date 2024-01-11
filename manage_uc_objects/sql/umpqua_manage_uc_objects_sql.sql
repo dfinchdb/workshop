@@ -226,15 +226,12 @@ GRANT USE CATALOG, USE SCHEMA, APPLY TAG, BROWSE, EXECUTE, REFRESH, MODIFY, READ
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.bronze_data
-  MANAGED LOCATION 'abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/bronze';
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.silver_data
-  MANAGED LOCATION 'abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/silver';
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.gold_data
-  MANAGED LOCATION 'abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/gold';
 
 
 -- COMMAND ----------
@@ -243,15 +240,12 @@ CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.gold_data
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.bronze_data
-  MANAGED LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/bronze';
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.silver_data
-  MANAGED LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/silver';
 
 -- Create Schema if it does not exist
 CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.gold_data
-  MANAGED LOCATION 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/tables/gold';
 
 
 -- COMMAND ----------
