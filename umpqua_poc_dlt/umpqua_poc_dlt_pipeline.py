@@ -14,14 +14,14 @@ from umpqua_poc_dlt.umpqua_dlt import dlt_table
 # COMMAND ----------
 
 
-# def generate_table(live_table):
-#     @dlt.table(
-#         name=live_table["name"],
-#         comment="Raw custom data capture for " + live_table["name"],
-#         table_properties=live_table["table_properties"],
-#     )
-#     def create_live_table():
-#         return dlt_table(spark, live_table.get("source"), live_table.get("options"))
+def generate_table(live_table):
+    @dlt.table(
+        name=live_table["name"],
+        comment="Raw custom data capture for " + live_table["name"],
+        table_properties=live_table["table_properties"],
+    )
+    def create_live_table():
+        return dlt_table(spark, live_table.get("source"), live_table.get("options"))
 
 
 # COMMAND ----------
@@ -75,11 +75,11 @@ config = [
 
 # COMMAND ----------
 
-dlt_config_path = "./umpqua_poc_dlt/umpqua_dlt_config.ini"
-dlt_config = configparser.ConfigParser()
-dlt_config.read(dlt_config_path)
+# dlt_config_path = "./umpqua_poc_dlt/umpqua_dlt_config.ini"
+# dlt_config = configparser.ConfigParser()
+# dlt_config.read(dlt_config_path)
 
-config = ast.literal_eval(dlt_config["dlt_config"]["config"])
+# config = ast.literal_eval(dlt_config["dlt_config"]["config"])
 
 # COMMAND ----------
 
