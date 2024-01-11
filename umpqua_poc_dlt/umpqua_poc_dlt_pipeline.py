@@ -33,7 +33,7 @@ spark = SparkSession.builder.getOrCreate()
 config = [
     {
         "name": "account_notification",
-        "source": "/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/pipe_delim_files/account_notification",
+        "source": "abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/autoloader/account_notification",
         "options": {
             "cloudFiles.format": "csv",
             "header": "true",
@@ -50,27 +50,7 @@ config = [
             "myCompanyPipeline.quality": "bronze",
             "pipelines.autoOptimize.managed": "true",
         },
-    },
-    {
-        "name": "aggregates",
-        "source": "/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/pipe_delim_files/aggregates",
-        "options": {
-            "cloudFiles.format": "csv",
-            "header": "true",
-            "delimiter": "||",
-            "rescuedDataColumn": "_rescued_data",
-            "cloudFiles.validateOptions": "true",
-            "cloudFiles.useNotifications": "false",
-            "cloudFiles.inferColumnTypes": "true",
-            "cloudFiles.backfillInterval": "1 day",
-            "cloudFiles.schemaEvolutionMode": "rescue",
-            "cloudFiles.allowOverwrites": "false",
-        },
-        "table_properties": {
-            "myCompanyPipeline.quality": "bronze",
-            "pipelines.autoOptimize.managed": "true",
-        },
-    },
+    }
 ]
 
 # COMMAND ----------
