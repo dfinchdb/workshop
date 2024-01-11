@@ -51,7 +51,7 @@ timeZone
 from pyspark.sql import SparkSession, DataFrame
 
 
-def bronze_with_dlt(
+def dlt_table(
     spark: SparkSession, source_path: str, options: dict[str, str]
 ) -> DataFrame:
     df = spark.readStream.format("cloudFiles").options(**options).load(source_path)
@@ -59,8 +59,6 @@ def bronze_with_dlt(
 
 
 if __name__ == "__main__":
-    spark = SparkSession.builder.getOrCreate()
-
+    pass
 
 # COMMAND ----------
-

@@ -9,6 +9,25 @@ from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
 
+from umpqua_poc_dlt.umpqua_dlt import dlt_table
+
+# COMMAND ----------
+
+
+def generate_table(live_table):
+    @dlt.table(
+        name=live_table["name"],
+        comment="Raw custom data capture for " + live_table["name"],
+        table_properties=live_table["table_properties"],
+    )
+    def create_live_table():
+        return dlt_table(spark, live_table.get("source"), live_table.get("options"))
+
+
+# COMMAND ----------
+
+spark = SparkSession.builder.getOrCreate()
+
 # COMMAND ----------
 
 config = [
@@ -63,20 +82,5 @@ dlt_config.read(dlt_config_path)
 config = ast.literal_eval(dlt_config["dlt_config"]["config"])
 
 # COMMAND ----------
-
-
-def generate_table(live_table):
-    @dlt.table(
-        name=live_table["name"],
-        comment="Raw custom data capture for " + live_table["name"],
-        table_properties=live_table["table_properties"],
-    )
-    def create_live_table():
-        return (
-            spark.readStream.format("cloudFiles")
-            .options(**live_table["options"])
-            .load(live_table["source"])
-        )
-
 
 [generate_table(table) for table in config]
