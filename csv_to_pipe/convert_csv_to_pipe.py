@@ -144,6 +144,7 @@ def csv_to_pipe() -> None:
         for data_set in data:
             data_source = data_set["data_source"]
             data_destination = data_set["data_destination"]
+            auto_loader_destination = data_set["auto_loader"]
             data_table_destination = data_set["table_destination"]
 
             source_files = dbutils.fs.ls(data_source)
@@ -153,15 +154,20 @@ def csv_to_pipe() -> None:
                     "_".join(source_file.name.split(".")[:-1]).replace(" ", "_").lower()
                 )
                 pipe_delim_path = f"{data_destination}/{name}"
+                auto_loader_path = f"{auto_loader_destination}/{name}"
                 table_path = f"{data_table_destination}.test_{name}"
 
                 # Read csv files
                 df = read_csv(spark, csv_path)
                 print(f"Read CSV File: {csv_path}")
 
-                # Write "||" delim csv files
+                # Write "||" delim csv files to Volumes
                 write_csv(df, pipe_delim_path, "||")
                 print(f'Created "||" delim file: {pipe_delim_path}')
+
+                # Write "||" delim csv files to AutoLoader directory
+                write_csv(df, pipe_delim_path, "||")
+                print(f'Created "||" delim file: {auto_loader_path}')
 
                 # Create tables
                 if create_tables == True:
@@ -174,4 +180,3 @@ if __name__ == "__main__":
 
 
 # COMMAND ----------
-
