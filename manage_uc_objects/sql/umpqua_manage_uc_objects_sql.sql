@@ -99,11 +99,11 @@ GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED ST
 
 
 -- Create external location to be used for any other purpose in the dev catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_dev_playground_zone_ext_loc` URL 'abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/playground'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_dev_playground_ext_loc` URL 'abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/playground'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_dev playground';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
-GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED STORAGE ON EXTERNAL LOCATION `umpqua_poc_dev_playground_zone_ext_loc` TO `umpqua_poc_dev_group`;
+GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED STORAGE ON EXTERNAL LOCATION `umpqua_poc_dev_playground_ext_loc` TO `umpqua_poc_dev_group`;
 
 -- COMMAND ----------
 
@@ -169,11 +169,11 @@ CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_landing_zone_ext_loc` URL
 GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED STORAGE ON EXTERNAL LOCATION `umpqua_poc_prd_landing_zone_ext_loc` TO `umpqua_poc_prd_group`;
 
 -- Create external location to be used for any other purpose in the prd catalog
-CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_playground_zone_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/playground'
+CREATE EXTERNAL LOCATION IF NOT EXISTS `umpqua_poc_prd_playground_ext_loc` URL 'abfss://umpquapocprd@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/playground'
     WITH (CREDENTIAL `121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101`)
     COMMENT 'External Location for the umpqua_poc_prd playground';
 -- Grant permission to user, group, or service principal to browse, read, & write files located in the external location & create managed storage and external volumes using the external location
-GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED STORAGE ON EXTERNAL LOCATION `umpqua_poc_prd_landing_zone_ext_loc` TO `umpqua_poc_prd_group`;
+GRANT BROWSE, READ FILES, WRITE FILES, CREATE EXTERNAL VOLUME, CREATE MANAGED STORAGE ON EXTERNAL LOCATION `umpqua_poc_prd_playground_ext_loc` TO `umpqua_poc_prd_group`;
 
 -- COMMAND ----------
 
