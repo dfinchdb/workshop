@@ -225,13 +225,13 @@ GRANT USE CATALOG, USE SCHEMA, APPLY TAG, BROWSE, EXECUTE, REFRESH, MODIFY, READ
 -- Create the DEV Schemas
 
 -- Create Schema if it does not exist
-CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.bronze_data
+CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.bronze_data;
 
 -- Create Schema if it does not exist
-CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.silver_data
+CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.silver_data;
 
 -- Create Schema if it does not exist
-CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.gold_data
+CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.gold_data;
 
 
 -- COMMAND ----------
@@ -239,13 +239,13 @@ CREATE SCHEMA IF NOT EXISTS umpqua_poc_dev.gold_data
 -- Create the PRD Schemas
 
 -- Create Schema if it does not exist
-CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.bronze_data
+CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.bronze_data;
 
 -- Create Schema if it does not exist
-CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.silver_data
+CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.silver_data;
 
 -- Create Schema if it does not exist
-CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.gold_data
+CREATE SCHEMA IF NOT EXISTS umpqua_poc_prd.gold_data;
 
 
 -- COMMAND ----------
