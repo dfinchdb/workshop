@@ -1,8 +1,6 @@
 # Databricks notebook source
 import ast
 import configparser
-import pathlib
-import re
 
 from pyspark.sql import SparkSession, DataFrame
 
@@ -110,7 +108,8 @@ def csv_to_pipe() -> None:
         data_processing_config["options"]["create_test_table"]
     )
     data = ast.literal_eval(data_processing_config["paths"]["data"])
-    print(data)
+    print(f"Paths used: {data}")
+
     # Get or Create SparkSession & dbutils
     spark = SparkSession.builder.getOrCreate()
     dbutils = get_dbutils(spark)
@@ -120,11 +119,14 @@ def csv_to_pipe() -> None:
         for data_set in data:
             data_source = data_set["data_source"]
             data_destination = data_set["data_destination"]
+            auto_loader_destination = data_set["auto_loader"]
             data_table_destination = data_set["table_destination"]
 
             # Remove "||" directory
             dbutils.fs.rm(data_destination, recurse=True)
+            dbutils.fs.rm(auto_loader_destination, recurse=True)
             print(f"Removed directory: {data_destination}")
+            print(f"Removed directory: {auto_loader_destination}")
             source_files = dbutils.fs.ls(data_source)
 
             # Remove tables
