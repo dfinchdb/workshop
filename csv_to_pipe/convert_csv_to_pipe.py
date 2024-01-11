@@ -168,7 +168,7 @@ def csv_to_pipe() -> None:
                 print(f'Created "||" delim file: {pipe_delim_path}')
 
                 # Write "||" delim csv files to AutoLoader directory
-                write_csv(df, pipe_delim_path, "||")
+                write_csv(df, auto_loader_path, "||")
                 print(f'Created "||" delim file: {auto_loader_path}')
 
                 # Create tables
