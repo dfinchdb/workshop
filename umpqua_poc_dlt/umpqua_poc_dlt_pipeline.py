@@ -33,7 +33,7 @@ spark = SparkSession.builder.getOrCreate()
 config = [
     {
         "name": "account_notification",
-        "source": "abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/autoloader/account_notification",
+        "source": "abfss://umpquapocdev@ubsadatabrickspoc.dfs.core.windows.net/umpqua_poc/landing_zone/account_notification",
         "options": {
             "cloudFiles.format": "csv",
             "header": "true",
@@ -47,7 +47,7 @@ config = [
             "cloudFiles.allowOverwrites": "false",
         },
         "table_properties": {
-            "myCompanyPipeline.quality": "bronze",
+            "quality": "bronze",
             "pipelines.autoOptimize.managed": "true",
         },
     }
