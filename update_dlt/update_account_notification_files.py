@@ -26,7 +26,7 @@ df.display()
 
 # COMMAND ----------
 
-destination = "/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/pipe_delim_files/account_notification"
+destination = "abfss://umpquapocdev@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/account_notification"
 
 df.write.csv(
     path=destination,
