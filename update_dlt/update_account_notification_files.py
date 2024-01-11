@@ -5,6 +5,14 @@
 
 # COMMAND ----------
 
+from pyspark.sql import SparkSession, DataFrame
+
+# COMMAND ----------
+
+spark = SparkSession.builder.getOrCreate()
+
+# COMMAND ----------
+
 df = (
     spark.read.format("csv")
     .option("header", "true")
