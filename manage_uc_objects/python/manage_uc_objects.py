@@ -492,7 +492,7 @@ def cleanup_uc_objects(
 
 def create_uc_objects() -> None:
     """Creates the UC objects.
-        If uc_cleanup is set to True in the config, then the objects will be removed
+    If uc_cleanup is set to True in the config, then the objects will be removed
     """
     # Read "manage_uc_objects_config.ini" & parse configs
     uc_obj_config_path = pathlib.Path(__file__).parent / "manage_uc_objects_config.ini"
@@ -529,7 +529,9 @@ def create_uc_objects() -> None:
         for uc_storage_credential in uc_storage_credentials:
             create_storage_credential(
                 client,
-                storage_credential_name=uc_storage_credential["storage_credential_name"],
+                storage_credential_name=uc_storage_credential[
+                    "storage_credential_name"
+                ],
                 access_connector=uc_storage_credential["access_connector"],
                 comment=uc_storage_credential["comment"],
             )
