@@ -27,15 +27,26 @@ def get_dbutils(spark: SparkSession):
 
 
 def create_catalog(spark, catalog_name):
-    spark.sql(f"CREATE CATALOG IF NOT EXISTS {catalog_name}")
+    spark.sql(
+        f"""
+        CREATE CATALOG IF NOT EXISTS {catalog_name}
+        """
+    )
 
 
 def create_schema(spark, catalog_name, schema_name):
-    spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}")
+    spark.sql(
+        f"""
+        CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}"""
+    )
 
 
 def create_volume(spark, catalog_name, schema_name, volume_name):
-    spark.sql(f"CREATE VOLUME IF NOT EXISTS {catalog_name}.{schema_name}.{volume_name}")
+    spark.sql(
+        f"""
+        CREATE VOLUME IF NOT EXISTS {catalog_name}.{schema_name}.{volume_name}
+        """
+    )
 
 
 def create_external_location(
@@ -52,10 +63,14 @@ def create_external_location(
 
 def create_sample_table(spark, catalog_name, schema_name, table_name):
     spark.sql(
-        f"CREATE TABLE IF NOT EXISTS {catalog_name}.{schema_name}.{table_name} (id INT, name STRING)"
+        f"""
+        CREATE TABLE IF NOT EXISTS {catalog_name}.{schema_name}.{table_name} (id INT, name STRING)
+        """
     )
     spark.sql(
-        f"INSERT INTO {catalog_name}.{schema_name}.{table_name} VALUES (1, 'Alice'), (2, 'Bob'), (3, 'Charlie')"
+        f"""
+        INSERT INTO {catalog_name}.{schema_name}.{table_name} VALUES (1, 'Alice'), (2, 'Bob'), (3, 'Charlie')
+        """
     )
 
 
