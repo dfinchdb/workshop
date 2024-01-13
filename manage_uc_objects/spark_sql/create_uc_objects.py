@@ -96,10 +96,11 @@ def create_uc_objects(spark, catalogs, schemas, volumes, locations, tables=None)
             location.get("comment"),
         )
 
-    for table in tables:
-        create_sample_table(
-            spark, table.get("catalog"), table.get("schema"), table.get("table")
-        )
+    if tables is not None:
+        for table in tables:
+            create_sample_table(
+                spark, table.get("catalog"), table.get("schema"), table.get("table")
+            )
 
 
 def project_uc_object_config(
