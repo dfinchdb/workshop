@@ -169,12 +169,16 @@ def drop_external_locations(spark, external_location_names):
                 print(f"Unable to drop External Location: {external_location_name}")
 
 
+def drop_uc_objects(spark, dbutils, catalogs, external_locations):
+    drop_catalogs(spark, dbutils, catalogs)
+    drop_external_locations(spark, external_locations)
+
+
 if __name__ == "__main__":
     spark = get_sparksession()
     dbutils = get_dbutils(spark)
 
-    catalog_names = ["df_test_catalog"]
-    external_location_names = ["df_test_location"]
+    catalogs = ["df_test_catalog"]
+    external_locations = ["df_test_location"]
 
-    drop_catalogs(spark, dbutils, catalog_names)
-    drop_external_locations(spark, external_location_names)
+    drop_uc_objects(spark, dbutils, catalogs, external_locations)

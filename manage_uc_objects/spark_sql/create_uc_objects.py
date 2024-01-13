@@ -37,7 +37,8 @@ def create_catalog(spark, catalog_name):
 def create_schema(spark, catalog_name, schema_name):
     spark.sql(
         f"""
-        CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}"""
+        CREATE SCHEMA IF NOT EXISTS {catalog_name}.{schema_name}
+        """
     )
 
 
@@ -74,35 +75,7 @@ def create_sample_table(spark, catalog_name, schema_name, table_name):
     )
 
 
-if __name__ == "__main__":
-    spark = get_sparksession()
-    dbutils = get_dbutils(spark)
-
-    catalogs = [{"catalog": "df_test_catalog"}]
-    schemas = [{"catalog": "df_test_catalog", "schema": "df_test_schema"}]
-    volumes = [
-        {
-            "catalog": "df_test_catalog",
-            "schema": "df_test_schema",
-            "volume": "test_volume",
-        }
-    ]
-    tables = [
-        {
-            "catalog": "df_test_catalog",
-            "schema": "df_test_schema",
-            "table": "sample_table",
-        }
-    ]
-    locations = [
-        {
-            "name": "df_test_location",
-            "location": "abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/playground",
-            "credential": "121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101",
-            "comment": "",
-        }
-    ]
-
+def create_uc_objects(spark, catalogs, schemas, volumes, locations, tables=None):
     for catalog in catalogs:
         create_catalog(spark, catalog.get("catalog"))
 
@@ -114,11 +87,6 @@ if __name__ == "__main__":
             spark, volume.get("catalog"), volume.get("schema"), volume.get("volume")
         )
 
-    for table in tables:
-        create_sample_table(
-            spark, table.get("catalog"), table.get("schema"), table.get("table")
-        )
-
     for location in locations:
         create_external_location(
             spark,
@@ -127,3 +95,41 @@ if __name__ == "__main__":
             location.get("credential"),
             location.get("comment"),
         )
+
+    for table in tables:
+        create_sample_table(
+            spark, table.get("catalog"), table.get("schema"), table.get("table")
+        )
+
+
+if __name__ == "__main__":
+    catalogs = [{"catalog": "df_test_catalog"}]
+    schemas = [{"catalog": "df_test_catalog", "schema": "df_test_schema"}]
+    volumes = [
+        {
+            "catalog": "df_test_catalog",
+            "schema": "df_test_schema",
+            "volume": "test_volume",
+        }
+    ]
+
+    locations = [
+        {
+            "name": "df_test_location",
+            "location": "abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/playground",
+            "credential": "121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101",
+            "comment": "",
+        }
+    ]
+
+    tables = [
+        {
+            "catalog": "df_test_catalog",
+            "schema": "df_test_schema",
+            "table": "sample_table",
+        }
+    ]
+
+    spark = get_sparksession()
+    dbutils = get_dbutils(spark)
+    create_uc_objects(spark, catalogs, schemas, volumes, locations, tables)
