@@ -178,7 +178,22 @@ if __name__ == "__main__":
     spark = get_sparksession()
     dbutils = get_dbutils(spark)
 
-    catalogs = ["df_test_catalog"]
-    external_locations = ["df_test_location"]
+    catalogs = ["umpqua_poc_dev", "umpqua_poc_prd"]
+    external_locations = [
+        "umpqua_poc_dev_bronze_schema_ext_loc",
+        "umpqua_poc_dev_silver_schema_ext_loc",
+        "umpqua_poc_dev_gold_schema_ext_loc",
+        "umpqua_poc_dev_bronze_volume_ext_loc",
+        "umpqua_poc_dev_silver_volume_ext_loc",
+        "umpqua_poc_dev_gold_volume_ext_loc",
+        "umpqua_poc_dev_landing_zone_ext_loc",
+        "umpqua_poc_prd_bronze_schema_ext_loc",
+        "umpqua_poc_prd_silver_schema_ext_loc",
+        "umpqua_poc_prd_gold_schema_ext_loc",
+        "umpqua_poc_prd_bronze_volume_ext_loc",
+        "umpqua_poc_prd_silver_volume_ext_loc",
+        "umpqua_poc_prd_gold_volume_ext_loc",
+        "umpqua_poc_prd_landing_zone_ext_loc",
+    ]
 
     drop_uc_objects(spark, dbutils, catalogs, external_locations)

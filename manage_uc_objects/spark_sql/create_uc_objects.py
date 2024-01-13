@@ -102,34 +102,105 @@ def create_uc_objects(spark, catalogs, schemas, volumes, locations, tables=None)
         )
 
 
-if __name__ == "__main__":
-    catalogs = [{"catalog": "df_test_catalog"}]
-    schemas = [{"catalog": "df_test_catalog", "schema": "df_test_schema"}]
-    volumes = [
+def project_uc_object_config(
+    project_name, storage_account_name, storage_credential_name
+):
+    project_config = dict()
+    project_config["catalogs"] = [{"catalog": f"{project_name}_dev"}]
+    project_config["schemas"] = [
+        {"catalog": f"{project_name}_dev", "schema": "bronze_data"},
+        {"catalog": f"{project_name}_dev", "schema": "silver_data"},
+        {"catalog": f"{project_name}_dev", "schema": "gold_data"},
+    ]
+    project_config["volumes"] = [
         {
-            "catalog": "df_test_catalog",
-            "schema": "df_test_schema",
-            "volume": "test_volume",
-        }
+            "catalog": f"{project_name}_dev",
+            "schema": "bronze_data",
+            "volume": "bronze_volume",
+        },
+        {
+            "catalog": f"{project_name}_dev",
+            "schema": "silver_data",
+            "volume": "silver_volume",
+        },
+        {
+            "catalog": f"{project_name}_dev",
+            "schema": "gold_data",
+            "volume": "gold_volume",
+        },
     ]
 
-    locations = [
+    project_config["locations"] = [
         {
-            "name": "df_test_location",
-            "location": "abfss://umpquapocprd@oneenvadls.dfs.core.windows.net/umpqua_poc/playground",
+            "name": f"{project_name}_dev_bronze_schema_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/tables/bronze",
+            "credential": f"{storage_credential_name}",
+            "comment": f"External location for the bronze schema of the dev catalog for project {project_name}",
+        },
+        {
+            "name": f"{project_name}_dev_silver_schema_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/tables/silver",
             "credential": "121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101",
-            "comment": "",
-        }
-    ]
-
-    tables = [
+            "comment": f"External location for the silver schema of the dev catalog for project {project_name}",
+        },
         {
-            "catalog": "df_test_catalog",
-            "schema": "df_test_schema",
-            "table": "sample_table",
-        }
+            "name": f"{project_name}_dev_gold_schema_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/tables/gold",
+            "credential": f"{storage_credential_name}",
+            "comment": f"External location for the gold schema of the dev catalog for project {project_name}",
+        },
+        {
+            "name": f"{project_name}_dev_bronze_volume_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/volumes/bronze",
+            "credential": f"{storage_credential_name}",
+            "comment": f"External location for the bronze volume of the dev catalog for project {project_name}",
+        },
+        {
+            "name": f"{project_name}_dev_silver_volume_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/volumes/silver",
+            "credential": f"{storage_credential_name}",
+            "comment": f"External location for the silver volume of the dev catalog for project {project_name}",
+        },
+        {
+            "name": f"{project_name}_dev_gold_volume_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/volumes/gold",
+            "credential": f"{storage_credential_name}",
+            "comment": f"External location for the gold volume of the dev catalog for project {project_name}",
+        },
+        {
+            "name": f"{project_name}_dev_landing_zone_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/landing_zone",
+            "credential": f"{storage_credential_name}",
+            "comment": f"External location for the landing zone of the dev catalog for project {project_name}",
+        },
+        {
+            "name": f"{project_name}_dev_playground_ext_loc",
+            "location": f"abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}/playground",
+            "credential": f"{storage_credential_name}",
+            "comment": f"External location for the playground of the dev catalog for project {project_name}",
+        },
     ]
+    return project_config
 
+
+if __name__ == "__main__":
     spark = get_sparksession()
     dbutils = get_dbutils(spark)
-    create_uc_objects(spark, catalogs, schemas, volumes, locations, tables)
+
+    project_name = "umpqua_poc"
+    storage_account_name = "oneenvadls"
+    storage_container_name = "umpquapocdev"
+    storage_credential_name = (
+        "121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101"
+    )
+    project_config = project_uc_object_config(
+        project_name, storage_account_name, storage_credential_name
+    )
+
+    create_uc_objects(
+        spark,
+        project_config.get("catalogs"),
+        project_config.get("schemas"),
+        project_config.get("volumes"),
+        project_config.get("locations"),
+    )
