@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 
-from manage_uc_objects.spark_sql.project_config import (
+from project_config import (
     uc_object_config,
     uc_permissions_config,
 )
