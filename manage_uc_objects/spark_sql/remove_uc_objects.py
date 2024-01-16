@@ -5,6 +5,8 @@ import sys
 
 from pyspark.sql import SparkSession
 
+from manage_uc_objects.spark_sql.project_config import uc_object_config
+
 
 def get_sparksession():
     return SparkSession.builder.getOrCreate()
@@ -132,6 +134,7 @@ def drop_catalog(spark, dbutils, catalog_name):
             ).collect()
         ]
     except:
+        schema_names = []
         print(f"Failed to list Schemas in Catalog: {catalog_name}")
 
     drop_schemas(spark, dbutils, catalog_name, schema_names)
@@ -161,12 +164,19 @@ def drop_external_locations(spark, external_location_names):
             try:
                 spark.sql(
                     f"""
-                    DROP EXTERNAL LOCATION IF EXISTS {external_location_name}
+                    DROP EXTERNAL LOCATION IF EXISTS {external_location_name} FORCE
                     """
                 )
                 print(f"Dropped External Location: {external_location_name}")
             except:
                 print(f"Unable to drop External Location: {external_location_name}")
+
+
+def delete_container_root(dbutils, storage_account_name, storage_container_name):
+    dbutils.fs.rm(
+        f'abfss://{storage_container_name}@{storage_account_name}.dfs.core.windows.net/{project_name}',
+        recurse=True,
+    )
 
 
 def drop_uc_objects(spark, dbutils, catalogs, external_locations):
@@ -178,22 +188,41 @@ if __name__ == "__main__":
     spark = get_sparksession()
     dbutils = get_dbutils(spark)
 
-    catalogs = ["umpqua_poc_dev", "umpqua_poc_prd"]
-    external_locations = [
-        "umpqua_poc_dev_bronze_schema_ext_loc",
-        "umpqua_poc_dev_silver_schema_ext_loc",
-        "umpqua_poc_dev_gold_schema_ext_loc",
-        "umpqua_poc_dev_bronze_volume_ext_loc",
-        "umpqua_poc_dev_silver_volume_ext_loc",
-        "umpqua_poc_dev_gold_volume_ext_loc",
-        "umpqua_poc_dev_landing_zone_ext_loc",
-        "umpqua_poc_prd_bronze_schema_ext_loc",
-        "umpqua_poc_prd_silver_schema_ext_loc",
-        "umpqua_poc_prd_gold_schema_ext_loc",
-        "umpqua_poc_prd_bronze_volume_ext_loc",
-        "umpqua_poc_prd_silver_volume_ext_loc",
-        "umpqua_poc_prd_gold_volume_ext_loc",
-        "umpqua_poc_prd_landing_zone_ext_loc",
-    ]
+    project_name = "umpqua_poc"
+    storage_account_name = "oneenvadls"
+    storage_container_name = "umpquapocdev"
+    storage_credential_name = (
+        "121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101"
+    )
+
+    project_config = uc_object_config(
+        project_name,
+        storage_account_name,
+        storage_container_name,
+        storage_credential_name,
+    )
+
+    catalogs = [x.get("catalog") for x in project_config.get("catalogs")]
+    external_locations = [x.get("name") for x in project_config.get("locations")]
+
+    # catalogs = ["umpqua_poc_dev", "umpqua_poc_prd"]
+    # external_locations = [
+    #     "umpqua_poc_dev_bronze_schema_ext_loc",
+    #     "umpqua_poc_dev_silver_schema_ext_loc",
+    #     "umpqua_poc_dev_gold_schema_ext_loc",
+    #     "umpqua_poc_dev_bronze_volume_ext_loc",
+    #     "umpqua_poc_dev_silver_volume_ext_loc",
+    #     "umpqua_poc_dev_gold_volume_ext_loc",
+    #     "umpqua_poc_dev_landing_zone_ext_loc",
+    #     "umpqua_poc_dev_playground_ext_loc",
+    #     "umpqua_poc_prd_bronze_schema_ext_loc",
+    #     "umpqua_poc_prd_silver_schema_ext_loc",
+    #     "umpqua_poc_prd_gold_schema_ext_loc",
+    #     "umpqua_poc_prd_bronze_volume_ext_loc",
+    #     "umpqua_poc_prd_silver_volume_ext_loc",
+    #     "umpqua_poc_prd_gold_volume_ext_loc",
+    #     "umpqua_poc_prd_landing_zone_ext_loc",
+    #     "umpqua_poc_prd_playground_ext_loc",
+    # ]
 
     drop_uc_objects(spark, dbutils, catalogs, external_locations)
