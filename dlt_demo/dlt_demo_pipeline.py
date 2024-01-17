@@ -1,9 +1,8 @@
 # Databricks notebook source
 # Import DLT and src/umpqua_poc_dlt
-import dlt
-
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
+import dlt
 
 from dlt_demo_setup.dlt_demo import (
     raw_tables,
@@ -24,7 +23,7 @@ from dlt_demo_setup.dlt_demo import (
 )
 def customerpiidata_dlt():
     return raw_tables(
-        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata",
+        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
     )
 
 
@@ -38,7 +37,7 @@ def customerpiidata_dlt():
 )
 def customergtlimits_dlt():
     return raw_tables(
-        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits",
+        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
     )
 
 
