@@ -44,37 +44,6 @@ def customerpiidata_dlt():
 
 
 @dlt.table(
-    name="customergtlimits",
-    comment="Raw custom data capture for customergtlimits",
-    table_properties={
-        "quality": "bronze",
-        "pipelines.autoOptimize.managed": "true",
-    },
-)
-def customergtlimits_dlt():
-    return (
-        spark.readStream.format("cloudFiles")
-        .options(
-            **{
-                "cloudFiles.format": "csv",
-                "header": "true",
-                "delimiter": "||",
-                "rescuedDataColumn": "_rescued_data",
-                "cloudFiles.validateOptions": "true",
-                "cloudFiles.useNotifications": "false",
-                "cloudFiles.inferColumnTypes": "true",
-                "cloudFiles.backfillInterval": "1 day",
-                "cloudFiles.schemaEvolutionMode": "rescue",
-                "cloudFiles.allowOverwrites": "false",
-            }
-        )
-        .load(
-            f"abfss://{storage_container}@{storage_account}.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
-        )
-    )
-
-
-@dlt.table(
     name="customerpiidata_clean",
     comment="Cleaned customerpiidata",
     table_properties={
