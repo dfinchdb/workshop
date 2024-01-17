@@ -11,12 +11,10 @@ import dlt
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql.functions import *
 
-spark = SparkSession.builder.getOrCreate()
-
 
 def raw_tables(source_path: str) -> DataFrame:
     df = (
-        dlt.readStream.format("cloudFiles")
+        spark.readStream.format("cloudFiles")
         .options(
             {
                 "cloudFiles.format": "csv",
