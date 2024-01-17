@@ -5,11 +5,11 @@ storage_container = "databricks-poc"
 pii_source = f"file:/Workspace/Repos/{user_id}/workshop/fixtures/sample_data/updates/CustomerPIIData_update.csv"
 pii_volume_destination = f"/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/pipe_delim_files/customerpiidata"
 pii_landing_destination = f"abfss://{storage_container}@{storage_account}.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
-pii_table_destination = "umpqua_poc.bronze_data.test_customerpiidata"
+pii_table_destination = "umpqua_poc_dev.bronze_data.test_customerpiidata"
 limits_source = f"file:/Workspace/Repos/{user_id}/workshop/fixtures/sample_data/updates/CustomerGTLimits_update.csv"
 limits_volume_destination = f"/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/pipe_delim_files/customergtlimits"
 limits_landing_destination = f"abfss://{storage_container}@{storage_account}.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
-limits_table_destination = "umpqua_poc.bronze_data.test_customergtlimits"
+limits_table_destination = "umpqua_poc_dev.bronze_data.test_customergtlimits"
 
 pii_df = (
     spark.read.format("csv")
