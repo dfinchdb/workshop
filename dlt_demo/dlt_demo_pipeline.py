@@ -24,7 +24,7 @@ from dlt_demo_setup.dlt_demo import (
 )
 def customerpiidata_dlt():
     return raw_tables(
-        source="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata",
+        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata",
     )
 
 
@@ -38,7 +38,7 @@ def customerpiidata_dlt():
 )
 def customergtlimits_dlt():
     return raw_tables(
-        source="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits",
+        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits",
     )
 
 
