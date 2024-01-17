@@ -6,6 +6,11 @@ import dlt
 
 # COMMAND ----------
 
+storage_account = "oneenvadls"
+storage_container = "databricks-poc"
+
+# COMMAND ----------
+
 
 @dlt.table(
     name="customerpiidata",
@@ -33,7 +38,7 @@ def customerpiidata_dlt():
             }
         )
         .load(
-            "abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
+            f"abfss://{storage_container}@{storage_account}.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
         )
     )
 
@@ -64,7 +69,7 @@ def customergtlimits_dlt():
             }
         )
         .load(
-            "abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
+            f"abfss://{storage_container}@{storage_account}.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
         )
     )
 
