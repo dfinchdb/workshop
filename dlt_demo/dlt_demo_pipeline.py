@@ -5,7 +5,8 @@ from pyspark.sql.types import *
 import dlt
 
 from dlt_demo_setup.dlt_demo import (
-    raw_tables,
+    customerpiidata,
+    customergtlimits,
     customerpiidata_clean,
     corporate_customer_data,
 )
@@ -22,7 +23,7 @@ from dlt_demo_setup.dlt_demo import (
     },
 )
 def customerpiidata_dlt():
-    return raw_tables(
+    return customerpiidata(
         spark,
         source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
     )
@@ -37,7 +38,7 @@ def customerpiidata_dlt():
     },
 )
 def customergtlimits_dlt():
-    return raw_tables(
+    return customergtlimits(
         spark,
         source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
     )

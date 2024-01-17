@@ -12,7 +12,29 @@ from pyspark.sql.types import *
 import dlt
 
 
-def raw_tables(spark, source_path: str) -> DataFrame:
+def customerpiidata(spark, source_path: str) -> DataFrame:
+    df = (
+        spark.readStream.format("cloudFiles")
+        .options(
+            **{
+                "cloudFiles.format": "csv",
+                "header": "true",
+                "delimiter": "||",
+                "rescuedDataColumn": "_rescued_data",
+                "cloudFiles.validateOptions": "true",
+                "cloudFiles.useNotifications": "false",
+                "cloudFiles.inferColumnTypes": "true",
+                "cloudFiles.backfillInterval": "1 day",
+                "cloudFiles.schemaEvolutionMode": "rescue",
+                "cloudFiles.allowOverwrites": "false",
+            }
+        )
+        .load(source_path)
+    )
+    return df
+
+
+def customergtlimits(spark, source_path: str) -> DataFrame:
     df = (
         spark.readStream.format("cloudFiles")
         .options(
