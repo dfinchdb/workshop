@@ -15,6 +15,11 @@ limits_volume_destination = f"/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/
 limits_landing_destination = f"abfss://{storage_container}@{storage_account}.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
 limits_table_destination = "umpqua_poc_dev.bronze_data.test_customergtlimits"
 
+dbutils.fs.rm(pii_volume_destination, recurse=True)
+dbutils.fs.rm(pii_landing_destination, recurse=True)
+dbutils.fs.rm(limits_volume_destination, recurse=True)
+dbutils.fs.rm(limits_landing_destination, recurse=True)
+
 pii_df = (
     spark.read.format("csv")
     .option("delimiter", ",")
