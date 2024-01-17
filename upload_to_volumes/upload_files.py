@@ -58,8 +58,13 @@ def upload_dir() -> None:
             db_source = os.path.join(os.getcwd(), os.path.abspath(".."))
             source_dir = str(f'file:{db_source}{path["source"]}')
             dest_dir = path["destination"]
-            dbutils.fs.cp(source_dir, dest_dir, recurse=True)
+            # dbutils.fs.cp(source_dir, dest_dir, recurse=True)
+            print(source_dir)
+            print(dest_dir)
 
 
 if __name__ == "__main__":
     upload_dir()
+
+"file:/Workspace/Users/david.finch@databricks.com/.ide/workshop-3b7f8fa3/fixtures/sample_data/csv_files/"
+"/Volumes/umpqua_poc_dev/bronze_data/bronze_volume/sample_data/csv_files"

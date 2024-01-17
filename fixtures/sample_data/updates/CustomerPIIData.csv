@@ -1,0 +1,4 @@
+customer_id,group_id,group_name,customer_name,tax_id,is_company,is_treasury,primary_cif,service_charge_plan_id,plan_name,charge_account,create_date,street_address1,street_address2,city,state,postal_code,province,is_international,iso_code_a3,customer_deleted_date
+12345,2,Business Customers,LocalCorp,,1,1,15688,0,No Charge,,"2018-11-05 14:02:00.753",1675 E Valley Rd,,Santa Barbara,CA,93108,,0,USA,
+23456,1,Retail Users,WorldCorp Inc.,121212121.0,1,0,238731,0,No Charge,,"2018-11-30 09:37:02.007",635 S SPENCER,,HINTON,OK,73047,,0,USA,
+34567,3,Consumer,Papa Georgio,111111113.0,0,0,299914,0,No Charge,,"2015-05-04 16:08:01.530",206 W. Island,Apt #3,Colfax,WA,99111,,0,USA,

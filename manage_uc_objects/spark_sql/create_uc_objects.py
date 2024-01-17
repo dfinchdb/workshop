@@ -143,10 +143,8 @@ if __name__ == "__main__":
 
     project_name = "umpqua_poc"
     storage_account_name = "oneenvadls"
-    storage_container_name = "umpquapocdev"
-    storage_credential_name = (
-        "121ccfbf-3d4f-4744-87f5-36b1c921c903-storage-credential-1703096015101"
-    )
+    storage_container_name = "databricks-poc"
+    storage_credential_name = "ubdatabrickspocdevtestsc"
 
     project_config = uc_object_config(
         project_name,
