@@ -12,7 +12,7 @@ from pyspark.sql.types import *
 import dlt
 
 
-def raw_tables(source_path: str) -> DataFrame:
+def raw_tables(spark, source_path: str) -> DataFrame:
     df = (
         spark.readStream.format("cloudFiles")
         .options(
