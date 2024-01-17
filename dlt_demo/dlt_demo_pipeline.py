@@ -125,7 +125,7 @@ def corporate_customer_data_dlt():
         "customerpiidata_clean.postal_code",
         "customerpiidata_clean.province",
         "customerpiidata_clean.is_international",
-        "customerpiidata_clean.iso_code_a3",
+        "customerpiidata_clean.iso_code_a3"
     ]
     return pii_df.join(
         limit_df, pii_df.customer_id == limit_df.customer_id, "left"
