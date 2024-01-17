@@ -46,14 +46,14 @@ limits_df = (
 )
 
 limits_df.write.csv(
-    path=pii_volume_destination,
+    path=limits_volume_destination,
     sep="||",
     header=True,
     mode="overwrite",
 )
 
 limits_df.write.csv(
-    path=pii_landing_destination,
+    path=limits_landing_destination,
     sep="||",
     header=True,
     mode="overwrite",
