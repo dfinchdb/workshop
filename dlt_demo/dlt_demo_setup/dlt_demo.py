@@ -68,7 +68,11 @@ def customerpiidata_clean() -> DataFrame:
 def corporate_customer_data() -> DataFrame:
     pii_df = dlt.read_stream("customerpiidata_clean").filter(col("is_company") == 1)
     limits_df = dlt.read_stream("customergtlimits")
-    df = pii_df.join(limits_df, pii_df.customer_id == limits_df.customer_id, "left")
+    df = (
+        dlt.read_stream("customerpiidata_clean")
+        .filter(col("is_company") == 1)
+        .join(dlt.read_stream("customergtlimits"), customer_id == customer_id, "left")
+    )
     return df
 
 

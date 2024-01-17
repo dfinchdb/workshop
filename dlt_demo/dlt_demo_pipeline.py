@@ -4,13 +4,6 @@ from pyspark.sql.functions import *
 from pyspark.sql.types import *
 import dlt
 
-from dlt_demo_setup.dlt_demo import (
-    customerpiidata,
-    customergtlimits,
-    customerpiidata_clean,
-    corporate_customer_data,
-)
-
 # COMMAND ----------
 
 
@@ -23,7 +16,26 @@ from dlt_demo_setup.dlt_demo import (
     },
 )
 def customerpiidata_dlt():
-    return customerpiidata(spark)
+    return (
+        spark.readStream.format("cloudFiles")
+        .options(
+            **{
+                "cloudFiles.format": "csv",
+                "header": "true",
+                "delimiter": "||",
+                "rescuedDataColumn": "_rescued_data",
+                "cloudFiles.validateOptions": "true",
+                "cloudFiles.useNotifications": "false",
+                "cloudFiles.inferColumnTypes": "true",
+                "cloudFiles.backfillInterval": "1 day",
+                "cloudFiles.schemaEvolutionMode": "rescue",
+                "cloudFiles.allowOverwrites": "false",
+            }
+        )
+        .load(
+            "abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
+        )
+    )
 
 
 @dlt.table(
@@ -35,7 +47,26 @@ def customerpiidata_dlt():
     },
 )
 def customergtlimits_dlt():
-    return customergtlimits(spark)
+    return (
+        spark.readStream.format("cloudFiles")
+        .options(
+            **{
+                "cloudFiles.format": "csv",
+                "header": "true",
+                "delimiter": "||",
+                "rescuedDataColumn": "_rescued_data",
+                "cloudFiles.validateOptions": "true",
+                "cloudFiles.useNotifications": "false",
+                "cloudFiles.inferColumnTypes": "true",
+                "cloudFiles.backfillInterval": "1 day",
+                "cloudFiles.schemaEvolutionMode": "rescue",
+                "cloudFiles.allowOverwrites": "false",
+            }
+        )
+        .load(
+            "abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
+        )
+    )
 
 
 @dlt.table(
@@ -48,7 +79,7 @@ def customergtlimits_dlt():
 )
 @dlt.expect_or_drop("valid_tax_id", "tax_id IS NOT NULL")
 def customerpiidata_clean_dlt():
-    return customerpiidata_clean()
+    return dlt.read_stream("customerpiidata")
 
 
 @dlt.table(
@@ -60,7 +91,15 @@ def customerpiidata_clean_dlt():
     },
 )
 def corporate_customer_data_dlt():
-    return corporate_customer_data()
+    return (
+        dlt.read_stream("customerpiidata_clean")
+        .filter(col("is_company") == 1)
+        .join(
+            dlt.read_stream("customergtlimits"),
+            ["customer_id", "customer_name"],
+            "left",
+        )
+    )
 
 
 # COMMAND ----------
