@@ -1,2 +1,0 @@
-alert_id||user_id||alert_date||target_address||notification_delivery_method||notification_type||status||updated_status
-23491||12174||2020-05-29T04:15:14.523Z||kellywadeharris@sbcglobal.net||Email||PostedTransactionAlert||Delivered||woops we forgot

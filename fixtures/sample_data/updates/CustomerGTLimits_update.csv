@@ -1,4 +1,0 @@
-customer_id,customer_name,token_required_limit,dual_approval_limit,limit_per_transaction,limit_per_day,limit_per_acct_per_day,limit_per_month,aggregate_ach_limit_per_day
-12345,LocalCorp,-1,-1,0.0,0.0,0.0,0.0,0
-23456,WorldCorp Inc.,-1,-1,9999999.99,999999.99,999999.99,99999.99,0
-34567,Papa Georgio,10,11000000,1000000.0,1000000.0,1000000.0,1000000.0,1000000
