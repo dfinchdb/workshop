@@ -12,7 +12,7 @@ from pyspark.sql.types import *
 import dlt
 
 
-def customerpiidata(spark, source_path: str) -> DataFrame:
+def customerpiidata(spark) -> DataFrame:
     df = (
         spark.readStream.format("cloudFiles")
         .options(
@@ -29,12 +29,14 @@ def customerpiidata(spark, source_path: str) -> DataFrame:
                 "cloudFiles.allowOverwrites": "false",
             }
         )
-        .load(source_path)
+        .load(
+            "abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
+        )
     )
     return df
 
 
-def customergtlimits(spark, source_path: str) -> DataFrame:
+def customergtlimits(spark) -> DataFrame:
     df = (
         spark.readStream.format("cloudFiles")
         .options(
@@ -51,7 +53,9 @@ def customergtlimits(spark, source_path: str) -> DataFrame:
                 "cloudFiles.allowOverwrites": "false",
             }
         )
-        .load(source_path)
+        .load(
+            "abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
+        )
     )
     return df
 

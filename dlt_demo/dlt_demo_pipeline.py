@@ -23,10 +23,7 @@ from dlt_demo_setup.dlt_demo import (
     },
 )
 def customerpiidata_dlt():
-    return customerpiidata(
-        spark,
-        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customerpiidata"
-    )
+    return customerpiidata(spark)
 
 
 @dlt.table(
@@ -38,10 +35,7 @@ def customerpiidata_dlt():
     },
 )
 def customergtlimits_dlt():
-    return customergtlimits(
-        spark,
-        source_path="abfss://databricks-poc@oneenvadls.dfs.core.windows.net/umpqua_poc/landing_zone/customergtlimits"
-    )
+    return customergtlimits(spark)
 
 
 @dlt.table(
