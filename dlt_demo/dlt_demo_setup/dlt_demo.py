@@ -8,15 +8,13 @@ Monitoring - https://docs.databricks.com/en/delta-live-tables/observability.html
 """
 
 import dlt
-from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql import DataFrame
 from pyspark.sql.functions import *
-
-spark = SparkSession.builder.getOrCreate()
 
 
 def raw_tables(source_path: str) -> DataFrame:
     df = (
-        spark.readStream.format("cloudFiles")
+        dlt.readStream.format("cloudFiles")
         .options(
             {
                 "cloudFiles.format": "csv",

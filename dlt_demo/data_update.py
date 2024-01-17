@@ -1,3 +1,7 @@
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+
 user_id = spark.sql('select current_user() as user').collect()[0]['user']
 storage_account = "oneenvadls"
 storage_container = "databricks-poc"
