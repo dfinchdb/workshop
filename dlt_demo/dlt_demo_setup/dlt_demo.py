@@ -13,6 +13,7 @@ from pyspark.sql.functions import *
 
 
 def raw_tables(source_path: str) -> DataFrame:
+    spark = SparkSession.builder.getOrCreate()
     df = (
         spark.readStream.format("cloudFiles")
         .options(
